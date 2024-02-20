@@ -1,0 +1,85 @@
+<!-- <div class="container mt-5">
+<div class="card" style="padding: 20px;">
+    <form #movieForm="ngForm" (ngSubmit)="addMovie(movieForm)">
+    <mat-form-field appearance="outline">
+        <mat-label>Movie ID</mat-label>
+        <input matInput 
+               placeholder="Enter ID"
+               [(ngModel)] ="movie.movieId"
+               name="movieId">
+        <mat-hint>ID</mat-hint>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="outline">
+        <mat-label>Movie Name</mat-label>
+        <input matInput 
+               placeholder="Enter movie name"
+               [(ngModel)] ="movie.movieName"
+               name="movieName">
+        <mat-hint>Movie Name</mat-hint>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Theatre Name</mat-label>
+        <input matInput 
+               placeholder="Enter theatre name"
+               [(ngModel)] ="movie.theatreName"
+               name="theatreName">
+        <mat-hint>Theatre Name</mat-hint>
+      </mat-form-field>
+      <br>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Total Seats</mat-label>
+        <input matInput 
+               placeholder="Enter total seats"
+               [(ngModel)] ="movie.totalSeats"
+               name="totalSeats">
+        <mat-hint>Total Seats</mat-hint>
+      </mat-form-field>
+      <br>
+
+      <button mat-stroked-button color="primary">Clear</button>
+      <button type="submit" mat-stroked-button color="primary">Add Movie</button>
+
+      </form>
+</div>
+</div> -->
+<div class="bootstrap-wrapper">
+       <div class="container">
+              <div class="row">
+                     <div class="col-md-6 offset-md-3">
+                            <h2 class="text-center margin-up">Add Movie</h2>
+                            <form #movieForm="ngForm" (ngSubmit)="addMovie(movieForm)">
+                                   <mat-form-field class="full-width" appearance="outline">
+                                          <mat-label>Movie ID</mat-label>
+                                          <input matInput placeholder="Enter ID" [(ngModel)]="movie.movieId"
+                                                 name="movieId">
+                                   </mat-form-field>
+                                   <mat-form-field class="full-width"  appearance="outline">
+                                          <mat-label>Movie Name</mat-label>
+                                          <input matInput placeholder="Enter movie name" [(ngModel)]="movie.movieName"
+                                                 name="movieName">
+                                   </mat-form-field>
+
+                                   <mat-form-field class="full-width" appearance="outline">
+                                          <mat-label>Theatre Name</mat-label>
+                                          <input matInput placeholder="Enter theatre name"
+                                                 [(ngModel)]="movie.theatreName" name="theatreName">
+                                   </mat-form-field>
+
+                                   <mat-form-field class="full-width" appearance="outline">
+                                          <mat-label>Total Seats</mat-label>
+                                          <input matInput placeholder="Enter total seats" [(ngModel)]="movie.totalSeats"
+                                                 name="totalSeats">        
+                                   </mat-form-field>
+                                   <div class="container text-center">
+                                          <button type="reset" mat-raised-button color="accent">Clear</button>
+                                          <button class="margin-left" type="submit" mat-raised-button color="primary">Add Movie</button>
+                                   </div>
+
+                            </form>
+                     </div>
+              </div>
+       </div>

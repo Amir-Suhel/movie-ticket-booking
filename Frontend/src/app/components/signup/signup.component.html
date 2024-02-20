@@ -1,0 +1,47 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <h2 class="text-center margin-up">Register Here</h2>
+                <form #signupForm="ngForm" (ngSubmit)="signup(signupForm)">
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>First Name</mat-label>
+                        <input matInput ngModel name="firstName" id="firstName" placeholder="Enter your first name"
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" ngModel name="lastName" id="lastName"
+                            placeholder="Enter your last name" required>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Secret Question</mat-label>
+                        <input matInput type="text" ngModel name="secretQuestion" id="secretQuestion"
+                            placeholder="Enter your first pet" required>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="email" ngModel name="email" id="email" placeholder="Enter your email"
+                            required>
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input ng-pattern="/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{6,}$/" matInput type="password" ngModel name="password" id="password"
+                            placeholder="Enter your password" required>
+                    </mat-form-field>
+                    <br>
+                    <div class="container text-center">
+                        <button class="text-center" type="submit" mat-raised-button color="primary">Sign Up</button>
+                    </div>
+                </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

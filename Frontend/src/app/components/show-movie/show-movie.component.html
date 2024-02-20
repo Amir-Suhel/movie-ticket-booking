@@ -1,0 +1,98 @@
+<div *ngIf="isAdmin()">
+    <mat-card>
+    <table mat-table  [dataSource]="movies" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Movie ID">
+            <th mat-header-cell *matHeaderCellDef>Movie ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.movieId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Movie Name">
+            <th mat-header-cell *matHeaderCellDef>Movie Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Theatre Name">
+            <th mat-header-cell *matHeaderCellDef>Theatre Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.theatreName}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Total Seats">
+            <th mat-header-cell *matHeaderCellDef>Total Seats</th>
+            <td mat-cell *matCellDef="let element"> {{element.totalSeats}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Show Tickets">
+            <th mat-header-cell *matHeaderCellDef>Show Tickets</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary"  (click)="showTickets(element.movieId)">
+                    <mat-icon>visibility</mat-icon>
+                </button>    
+            </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="Book Ticket">
+            <th mat-header-cell *matHeaderCellDef>Book Ticket</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="primary"  (click)="bookTicket(element)">
+                    <mat-icon>add_circle</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Delete Movie">
+            <th mat-header-cell *matHeaderCellDef>Delete Movie</th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-icon-button color="warn"  (click)="deleteMovie(element.movieId)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsAdmin"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsAdmin;"></tr>
+    </table>
+</mat-card>
+    </div>
+    <div *ngIf="!isAdmin()">
+        <mat-card>
+        <table mat-table  [dataSource]="movies" class="mat-elevation-z8">
+    
+            <ng-container matColumnDef="Movie ID">
+                <th mat-header-cell *matHeaderCellDef>Movie ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.movieId}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Movie Name">
+                <th mat-header-cell *matHeaderCellDef>Movie Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="Theatre Name">
+                <th mat-header-cell *matHeaderCellDef>Theatre Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.theatreName}} </td>
+            </ng-container>
+    
+    
+            <ng-container matColumnDef="Total Seats">
+                <th mat-header-cell *matHeaderCellDef>Total Seats</th>
+                <td mat-cell *matCellDef="let element"> {{element.totalSeats}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="Book Ticket">
+                <th mat-header-cell *matHeaderCellDef>Book Ticket</th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="primary"  (click)="bookTicket(element)">
+                        <mat-icon>add_circle</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+    
+            <tr mat-header-row *matHeaderRowDef="displayedColumnsUser"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumnsUser;"></tr>
+        </table>
+        </mat-card>
+        </div>
+    
+    

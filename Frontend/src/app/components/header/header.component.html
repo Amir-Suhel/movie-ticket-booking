@@ -1,0 +1,25 @@
+<mat-toolbar color="primary">
+  <span>
+    Movie Booking App
+  </span>
+  <span class="example-spacer"></span>
+  <button *ngIf="!isLoggedIn()" mat-raised-button color="primary" routerLink="/login">
+    Login
+  </button>
+  <button *ngIf="!isLoggedIn()" class="margin-left" mat-raised-button color="primary" routerLink="/signup">
+    Sign Up
+  </button>
+  <button class="margin-left" *ngIf="isLoggedIn()" mat-raised-button color="warn" (click) ="logout()" routerLink="/logout">
+    Logout
+  </button>
+</mat-toolbar>
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()"> 
+  <button mat-raised-button color="primary" routerLink="/">Home</button>
+  <button class="margin-left" *ngIf ="isAdmin()" mat-raised-button color="primary" routerLink="/addMovie">Add Movie</button>
+  <button class="margin-left" mat-raised-button color="primary" routerLink="/showMovie">Show Movies</button>
+</mat-toolbar>
+
+
+
+

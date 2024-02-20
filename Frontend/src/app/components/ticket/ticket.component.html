@@ -1,0 +1,88 @@
+<div>
+    <mat-card>
+        <table mat-table [dataSource]="tickets" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="Transaction ID">
+                <th mat-header-cell *matHeaderCellDef>Movie ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.transactionId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Movie Name">
+                <th mat-header-cell *matHeaderCellDef>Movie Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Theatre Name">
+                <th mat-header-cell *matHeaderCellDef>Theatre Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.theatreName
+                }} </td>
+            </ng-container>
+
+
+            <ng-container matColumnDef="Total Seats">
+                <th mat-header-cell *matHeaderCellDef>Total Seats</th>
+                <td mat-cell *matCellDef="let element"> {{element.totalSeats}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Available Seats">
+                <th mat-header-cell *matHeaderCellDef>Available Seats</th>
+                <td mat-cell *matCellDef="let element"> {{element.availableSeats}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Booked Seats">
+                <th mat-header-cell *matHeaderCellDef>Booked Seats</th>
+                <td mat-cell *matCellDef="let element"> {{element.bookedSeats}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </mat-card>
+</div>
+
+
+<!-- <div *ngIf="isAdmin()"> -->
+<!-- <div>
+    <mat-card>
+    <table mat-table  [dataSource]="tickets" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Transaction ID">
+            <th mat-header-cell *matHeaderCellDef>Movie ID</th>
+            <td mat-cell *matCellDef="let element"> {{element.movieId}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Movie Name">
+            <th mat-header-cell *matHeaderCellDef>Movie Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.movieName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Theatre Name">
+            <th mat-header-cell *matHeaderCellDef>Theatre Name</th>
+            <td mat-cell *matCellDef="let element"> {{element.theatreName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Total Seats">
+            <th mat-header-cell *matHeaderCellDef>Total Seats</th>
+            <td mat-cell *matCellDef="let element"> {{element.totalSeats}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Available Seats">
+            <th mat-header-cell *matHeaderCellDef>Available Seats</th>
+            <td mat-cell *matCellDef="let element"> {{element.availableSeats}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Booked Seats">
+            <th mat-header-cell *matHeaderCellDef>Booked Seats</th>
+            <td mat-cell *matCellDef="let element"> {{element.bookedSeats}} </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-card>
+    </div> -->
+
+<!-- <div *ngIf="! isAdmin()">
+        <h1>You are not allowed to this page</h1>
+    </div> -->

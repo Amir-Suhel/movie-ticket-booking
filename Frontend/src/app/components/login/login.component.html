@@ -1,0 +1,30 @@
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <mat-card>
+                <h2 class="text-center margin-up">Login Here</h2>
+                <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput ngModel name="email" id="email" placeholder="Enter your email">
+                    </mat-form-field>
+
+                    <mat-form-field class="full-width" appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput type="password" ngModel name="password" id="password"
+                            placeholder="Enter your password">
+                    </mat-form-field>
+                    <div class="container text-center">
+                        <button type="submit" mat-raised-button color="primary">Login</button>
+                        <button type="submit" mat-raised-button color="primary" routerLink="/forgotPassword"
+                            style="margin-left: 10px">Forgot Password</button>
+                    </div>
+
+                </form>
+            </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
